@@ -1,26 +1,20 @@
-# AI Efficiency Toolkit
+# AI Efficiency Toolkit / WPD OS Kernel
 
-Event-driven toolkit to reduce compute load and maximize effectiveness of Grok, Cursor, Codex, and ChatGPT.
+Unified efficiency layer for Grok, Cursor, Codex, and ChatGPT. Replaces small parts with a claim-aware, event-driven kernel.
 
-## Features
-- Task Router: Classifies tasks and recommends efficient models (prefer Grok or Codex CLI for heavy work to save Cursor budget).
-- Context Optimizer: Compresses history, strips fillers, caches responses.
-- Event-Driven Orchestrator: Processes PR comments / file events, filters noise, routes, logs claims.
-- MCP Server: Native tools for Cursor, Codex, ChatGPT, Grok.
-- Templates: AGENTS.md and Cursor rules for token efficiency.
-
-## Deploy for Codex / ChatGPT
-1. Clone this repo.
-2. For Codex: Use as MCP or run the CLI router before heavy tasks.
-3. For ChatGPT: Use custom GPTs with the tool definitions or local proxy (see LiteLLM config).
-4. For simultaneous use: Run the MCP server (stdio) and connect multiple clients.
+## Deployed Today
+- `wpd_os_kernel.py`: Claim + Event Processing + Routing (heavy → Codex CLI)
+- ChatGPT integration: `docs/chatgpt_integration.md` (tool schemas + system prompt)
+- Codex config example: `docs/codex_config_example.toml`
+- Blueprint: `WPD_OS_BLUEPRINT.md`
 
 ## Quick Start
 ```bash
 git clone https://github.com/WPD-sudo/ai-efficiency-toolkit.git
 cd ai-efficiency-toolkit
-python -m pip install -r requirements.txt
-python ai_router.py "Implement a cache layer"
+python wpd_os_kernel.py
 ```
 
-See `docs/` for detailed deploy guides per agent.
+See docs/ for Codex and ChatGPT specific setup. MCP server available for native tool use.
+
+Aligned with Owner Desk (BASIS_ONLY compatible, claim fencing respected).
