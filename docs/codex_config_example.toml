@@ -1,0 +1,8 @@
+# Example for ~/.codex/config.toml or project config
+[mcp_servers.wpd_efficiency]
+command = "python"
+args = ["wpd_os_kernel.py"]
+cwd = "/path/to/ai-efficiency-toolkit"
+
+# Then use tools: process_event, etc.
+# Heavy work recommendation routes to Codex itself.
